@@ -11,12 +11,12 @@ public class Articulo {
 	/**
 	 * Constructor para el Articulo
 	 * 
-	 * @param nombre        Nombre del Artículo, no puede ser mayor de 20 caracteres
+	 * @param nombre        Nombre del Artículo, no puede ser nulo, ni venir vacío, ni ser mayor de 20 caracteres
 	 * @param precioSinIVA  Precio del Articulo sin el IVA, no puede ser negativo
 	 * @param cuantosQuedan Número de Artículos que quedan, no puede ser negativo
 	 */
 	public Articulo(String nombre, double precioSinIVA, int cuantosQuedan) {
-		if (nombre.length() < 20) {
+		if (nombre != null && !nombre.isEmpty() && nombre.length() < 20) {
 			this.nombre = nombre;
 		}
 		if (precioSinIVA >= 0) {
