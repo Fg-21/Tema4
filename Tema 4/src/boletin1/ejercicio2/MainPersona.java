@@ -4,34 +4,46 @@ import java.util.Scanner;
 
 public class MainPersona {
 	public static void main(String[] args) {
-		// Objetos persona
-		Persona per1 = new Persona();
-		Persona per2 = new Persona();
+		// Objetos persona definidos
+		Persona per1;
+		Persona per2;
 
 		// Objeto Scanner
 		Scanner rd = new Scanner(System.in);
+		
+//		Variables para los atributos de Persona
+		String dni;
+		String nombre;
+		String apellidos;
+		int edad;
 
 		// Pedimos los datos de las personas por pantalla
 		System.out.println("DNI de la persona 1:");
-		per1.dni = rd.nextLine();
+		dni = rd.nextLine();
 		System.out.println("Introduce el nombre de la persona 1:");
-		per1.nombre = rd.nextLine();
+		nombre = rd.nextLine();
 		System.out.println("Apellido de la persona 1:");
-		per1.apellidos = rd.nextLine();
+		apellidos = rd.nextLine();
 		System.out.println("Edad de la persona 1:");
-		per1.edad = rd.nextInt();
+		edad = rd.nextInt();
 
+		//Creamos el objeto per1 con los atributos pedidos al usuario
+		per1 = new Persona(dni, nombre, apellidos, edad);
+		
 		// Limpiamos buffer
 		rd.nextLine();
 
 		System.out.println("DNI de la persona 2:");
-		per2.dni = rd.nextLine();
+		dni = rd.nextLine();
 		System.out.println("Introduce el nombre de la persona 2:");
-		per2.nombre = rd.nextLine();
+		nombre = rd.nextLine();
 		System.out.println("Apellido de la persona 2:");
-		per2.apellidos = rd.nextLine();
+		apellidos = rd.nextLine();
 		System.out.println("Edad de la persona 1:");
-		per2.edad = rd.nextInt();
+		edad = rd.nextInt();
+		
+		//Creamos el objeto per1 con los atributos pedidos al usuario
+		per2 = new Persona(dni, nombre, apellidos, edad);
 
 		// Imprimimos los datos y si es mayor de edad
 		System.out.println(per1.nombre +  " " + per1.apellidos + " con dni " + per1.dni

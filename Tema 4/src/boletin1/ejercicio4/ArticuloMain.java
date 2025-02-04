@@ -2,21 +2,21 @@ package boletin1.ejercicio4;
 
 public class ArticuloMain {
 	public static void main(String[] args) {
-		// Objeto de Articulo
-		Articulo art = new Articulo();
-
-		// Asignamos valores a sus atributos
-		art.nombre = "Teclado";
-		art.precioSinIVA = 8;
-		art.cuantosQuedan = 10;
+		// Objeto de Articulo con valores asignados
+		Articulo art = new Articulo("Teclado Increíblemente Barato", -1,-10);
 
 		// Imprimimos
 		System.out.println(art.nombre + " Precio: " + (art.precioSinIVA + (art.precioSinIVA * (art.IVA / 100)))
 				+ "€ Quedan: " + art.cuantosQuedan);
 
 		// Modificamos datos
+		art.nombre = "Teclado";
 		art.precioSinIVA = 9;
 		art.cuantosQuedan = 4;
+		
+		//Imprimimos que los datos se han modificado
+		System.out.println("\n--DATOS MODIFICADOS--\n");
+		
 
 		// Imrimimos de nuevo
 		System.out.println(art.nombre + " Precio: " + (art.precioSinIVA + (art.precioSinIVA * (art.IVA / 100)))
