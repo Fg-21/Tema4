@@ -9,8 +9,8 @@ public static void main(String[] args) {
 	Punto  punto3 = new Punto(-3,7);
 	
 	//Imprimimos las coordenadas de cada punto
-	System.out.println(punto1.x + ", " + punto1.y);
-	System.out.println(punto2.x + ", " + punto2.y);
-	System.out.println(punto3.x + ", " + punto3.y);
+	System.out.println(punto1.getX() + ", " + punto1.getY());
+	System.out.println(punto2.getX() + ", " + punto2.getY());
+	System.out.println(punto3.getX() + ", " + punto3.getY());
 }
 }

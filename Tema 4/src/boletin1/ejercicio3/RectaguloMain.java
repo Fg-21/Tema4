@@ -8,67 +8,67 @@ public class RectaguloMain {
 
 		// Mostramos coords del rectangulo 1
 		System.out.println("Coords rectangulo 1:");
-		System.out.println("(" + rec1.x1 + ", " + rec1.y1 + ")");
-		System.out.println("(" + rec1.x2 + ", " + rec1.y2 + ")");
+		System.out.println("(" + rec1.getX1() + ", " + rec1.getY1() + ")");
+		System.out.println("(" + rec1.getX2() + ", " + rec1.getY2() + ")");
 
 		// Perímetro rectangulo 1
-		System.out.println("Perímetro rectangulo 1: " + (Math.abs(rec1.x2 - rec1.x1) * 4));
+		System.out.println("Perímetro rectangulo 1: " + (Math.abs(rec1.getX2() - rec1.getX1()) * 4));
 
 		// Area rectangulo 1
-		System.out.println("Area del rectangulo 1: " + ((Math.abs(rec1.x2 - rec1.x1)) * (Math.abs(rec1.y2 - rec1.y1))));
+		System.out.println("Area del rectangulo 1: " + ((Math.abs(rec1.getX2() - rec1.getX1())) * (Math.abs(rec1.getY2() - rec1.getY1()))));
 
 		// Salto de linea
 		System.out.println();
 
 		// Mostramos coords del rectangulo 2
 		System.out.println("Coords rectangulo 2:");
-		System.out.println("(" + rec2.x1 + ", " + rec2.y1 + ")");
-		System.out.println("(" + rec2.x2 + ", " + rec2.y2 + ")");
+		System.out.println("(" + rec2.getX1() + ", " + rec2.getY1() + ")");
+		System.out.println("(" + rec2.getX2() + ", " + rec2.getY2() + ")");
 
 		// Perímetro rectangulo 2
 		System.out.println(
-				"Perímetro rectangulo 2: " + (Math.abs(rec2.x2 - rec2.x1) * 2 + (Math.abs(rec2.y2 - rec2.y1) * 2)));
+				"Perímetro rectangulo 2: " + (Math.abs(rec2.getX2() - rec2.getX1()) * 2 + (Math.abs(rec2.getY2() - rec2.getY1()) * 2)));
 
 		// Area rectangulo 2
-		System.out.println("Area del rectangulo 1: " + (Math.abs((rec2.y2 - rec2.y1) * (rec2.x2 - rec2.x1))));
+		System.out.println("Area del rectangulo 1: " + (Math.abs((rec2.getY2() - rec2.getY1()) * (rec2.getX2() - rec2.getX1()))));
 
 		// Modificamos los datos de las coordenadas
-		rec1.x1 = 2;
-		rec1.y1 = 6;
-		rec1.x2 = 8;
-		rec1.y2 = 3;
+		rec1.setX1(2);
+		rec1.setY1(6);
+		rec1.setX2(8);
+		rec1.setY2(3);
 
-		rec2.x1 = 1;
-		rec2.y1 = 8;
-		rec2.x2 = 5;
-		rec2.y2 = 0;
+		rec2.setX1(1);
+		rec2.setY1(8);
+		rec2.setX2(5);
+		rec2.setY2(0);
 
 		// Volvemos a hacer las operaciones
 		// Mostramos coords del rectangulo 1
 		System.out.println("Coords rectangulo 1:");
-		System.out.println("(" + rec1.x1 + ", " + rec1.y1 + ")");
-		System.out.println("(" + rec1.x2 + ", " + rec1.y2 + ")");
+		System.out.println("(" + rec1.getX1() + ", " + rec1.getY1() + ")");
+		System.out.println("(" + rec1.getX2() + ", " + rec1.getY2() + ")");
 
 		// Perímetro rectangulo 1
-		System.out.println("Perímetro rectangulo 1: " + (Math.abs(rec1.x2 - rec1.x1) * 4));
+		System.out.println("Perímetro rectangulo 1: " + (Math.abs(rec1.getX2() - rec1.getX1()) * 4));
 
 		// Area rectangulo 1
-		System.out.println("Area del rectangulo 1: " + ((Math.abs(rec1.x2 - rec1.x1)) * (Math.abs(rec1.y2 - rec1.y1))));
+		System.out.println("Area del rectangulo 1: " + ((Math.abs(rec1.getX2() - rec1.getX1())) * (Math.abs(rec1.getY2() - rec1.getY1()))));
 
 		// Salto de linea
 		System.out.println();
 
 		// Mostramos coords del rectangulo 2
 		System.out.println("Coords rectangulo 2:");
-		System.out.println("(" + rec2.x1 + ", " + rec2.y1 + ")");
-		System.out.println("(" + rec2.x2 + ", " + rec2.y2 + ")");
+		System.out.println("(" + rec2.getX1() + ", " + rec2.getY1() + ")");
+		System.out.println("(" + rec2.getX2() + ", " + rec2.getY2() + ")");
 
 		// Perímetro rectangulo 2
 		System.out.println(
-				"Perímetro rectangulo 2: " + (Math.abs(rec2.x2 - rec2.x1) * 2 + (Math.abs(rec2.y2 - rec2.y1) * 2)));
+				"Perímetro rectangulo 2: " + (Math.abs(rec2.getX2() - rec2.getX1()) * 2 + (Math.abs(rec2.getY2() - rec2.getY1()) * 2)));
 
 		// Area rectangulo 2
-		System.out.println("Area del rectangulo 1: " + (Math.abs((rec2.y2 - rec2.y1) * (rec2.x2 - rec2.x1))));
+		System.out.println("Area del rectangulo 1: " + (Math.abs((rec2.getY2() - rec2.getY1()) * (rec2.getX2() - rec2.getX1()))));
 
 	}
 }

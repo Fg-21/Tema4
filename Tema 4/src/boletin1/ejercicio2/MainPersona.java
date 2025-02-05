@@ -46,11 +46,11 @@ public class MainPersona {
 		per2 = new Persona(dni, nombre, apellidos, edad);
 
 		// Imprimimos los datos y si es mayor de edad
-		System.out.println(per1.nombre +  " " + per1.apellidos + " con dni " + per1.dni
-				+ (per1.edad >= 18 ? " es mayor de edad" : "es menor de edad"));
+		System.out.println(per1.getNombre() +  " " + per1.getApellidos()+ " con dni " + per1.getDni()
+				+ (per1.getEdad() >= 18 ? " es mayor de edad" : " es menor de edad"));
 		
-		System.out.println(per2.nombre + " " + per2.apellidos + " con dni " + per2.dni
-				+ (per2.edad >= 18 ? " es mayor de edad" : " es menor de edad"));
+		System.out.println(per2.getNombre()+ " " + per2.getApellidos()+ " con dni " + per2.getDni()
+				+ (per2.getEdad() >= 18 ? " es mayor de edad" : " es menor de edad"));
 		
 		//Cerramos scanner
 		rd.close();

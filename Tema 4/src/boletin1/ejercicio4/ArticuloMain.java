@@ -6,20 +6,20 @@ public class ArticuloMain {
 		Articulo art = new Articulo("Nombre Exageradamente Largo", -1,-10);
 
 		// Imprimimos
-		System.out.println(art.nombre + " Precio: " + (art.precioSinIVA + (art.precioSinIVA * (art.IVA / 100)))
-				+ "€ Quedan: " + art.cuantosQuedan);
+		System.out.println(art.getNombre() + ": Precio: " + (art.getPrecioSinIVA() + (art.getPrecioSinIVA() * (Articulo.IVA / 100)))
+				+ "€ Quedan: " + art.getCuantosQuedan());
 
 		// Modificamos datos
-		art.nombre = "Teclado";
-		art.precioSinIVA = 9;
-		art.cuantosQuedan = 4;
+		art.setNombre("Teclado");
+		art.setPrecioSinIVA(9);
+		art.setCuantosQuedan(4);
 		
 		//Imprimimos que los datos se han modificado
 		System.out.println("\n--DATOS MODIFICADOS--\n");
 		
 
 		// Imrimimos de nuevo
-		System.out.println(art.nombre + " Precio: " + (art.precioSinIVA + (art.precioSinIVA * (art.IVA / 100)))
-				+ "€ Quedan: " + art.cuantosQuedan);
+		System.out.println(art.getNombre() + ": Precio: " + (art.getPrecioSinIVA() + (art.getPrecioSinIVA() * (Articulo.IVA / 100)))
+				+ "€ Quedan: " + art.getCuantosQuedan());
 	}
 }
