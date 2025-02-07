@@ -79,5 +79,38 @@ public class Persona {
 		return dni;
 	}
 	
+	/**
+	 * Metodo que comprueba la mayoría de edad de la persona
+	 * @return true si es mayor de edad y false si no lo es
+	 */
+	public boolean esMayorDeEdad() {
+		return this.edad >= 18 ? true : false;
+	}
+	
+	/**
+	 * Metodo que comprueba si la persona está jubilada basándose en la edad
+	 * @return true si tiene mas de 65 años y false si no
+	 */
+	public boolean esJubilado() {
+		return this.edad >= 65 ? true : false;
+	}	
+	
+	/**
+	 * Metodo para calcular la diferencia de edad entre 2 personas
+	 * @param p Persona con la que se va a diferenciar la edad
+	 * @return Devuelve la diferencia de edad entre la persona invocante y la pasada como parámetro
+	 */
+	public int diferenciaEdad(Persona p) {
+		return Math.abs(this.edad - p.edad);
+	}
+	
+	/**
+	 * Metodo para revelar los atributos del objeto en forma de cadena
+	 * @return Cadena con los atributos del objeto y sus valores
+	 */
+	public String toString() {
+		return "DNI: " + this.dni + "\nNombre: " + this.nombre + "\nApellidos: " + this.apellidos + "\nEdad: " + this.edad;
+	}
+	
 	
 }

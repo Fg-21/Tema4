@@ -82,4 +82,59 @@ public class Articulo {
 			this.cuantosQuedan = cuantosQuedan;
 		}
 	}
+	
+	/**
+	 * Metodo que calcula el precio de venta al público (IVA incluido)
+	 * @return Devuelve el precio con el iva aplicado
+	 */
+	public double getPVP() {
+		return Math.abs(precioSinIVA + (precioSinIVA * IVA/100));
+	}
+	
+	/**
+	 * Metodo que calcula el precio de venta al público (IVA incluido) menos el descuento (%) pasado como parámetro
+	 * @param descuento Porcentaje de descuento que se aplica al producto
+	 * @return Devuelve el precio con el iva aplicado y con el descuento aplicado
+	 */
+	public double getPVPDescuento(double descuento) {
+		double PVP = getPVP();
+		return PVP - (PVP * descuento/100);
+	}
+	
+	/**
+	 * Método  vender  que actualiza los atributos del objeto tras vender una cantidad "cantidad"
+	 * @param cantidad Cantidad de artículos que se van a vender
+	 * @return Devuelve true si se han podido vender o false en caso contrario. Depende del stock del artículo
+	 */
+	public boolean vender(int cantidad) {
+		boolean vendido = false;
+		if (cuantosQuedan > cantidad) {
+			cuantosQuedan = cuantosQuedan - cantidad;
+			vendido = true;
+		}
+		return vendido;
+	}
+	
+	/**
+	 * Método almacenar que actualiza los atributos del objeto tras almacenar una cantidad "cantidad"
+	 * @param cantidad Cantidad de artículos que se van a vender
+	 */
+	public void almacenar(int cantidad) {
+		if(cantidad > 0) {
+		cuantosQuedan = cuantosQuedan + cantidad;
+		}
+		}
+	
+	
+	
+	/**
+	 * Metodo que devuelve la informacion del articulo en una cadena
+	 * @return Devuelve la info del articulo en una cadena
+	 */
+	public String toString() {
+		return "Nombre: " + nombre + "\nPrecio sin IVA: " + precioSinIVA + "\nStock: " + cuantosQuedan;
+	}
+	
+	
+	
 }
