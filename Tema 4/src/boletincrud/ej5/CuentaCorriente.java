@@ -2,6 +2,7 @@ package boletincrud.ej5;
 
 import java.util.Objects;
 
+
 public class CuentaCorriente {
 
 	// DNI de la cuenta Corriente
@@ -13,10 +14,10 @@ public class CuentaCorriente {
 	// Saldo que tiene la cuenta
 	private int saldo;
 
-	private nacionalidad nacion = nacionalidad.ESPAÑOLA;
+	private Nacionalidad nacion = Nacionalidad.ESPAÑOLA;
 
 	// Nacionalidad del propietario de la cuenta
-	enum nacionalidad {
+	enum Nacionalidad {
 		ESPAÑOLA, EXTRANJERA
 	};
 
@@ -32,9 +33,12 @@ public class CuentaCorriente {
 		this.saldo = saldoInicial;
 	}
 	
-	CuentaCorriente(String dni, String nombre) {
+	/**
+	 * Constructor de la cuenta con el dni asociado a la cuenta
+	 * @param dni DNI asociado a la cuenta
+	 */
+	CuentaCorriente(String dni) {
 	this.dni = dni;
-	this.nombre = nombre;
 	}
 
 	/**
@@ -59,11 +63,11 @@ public class CuentaCorriente {
 	 * @param saldoInicial Saldo de la cuenta
 	 * @param nacion       Nacionalidad de la persona
 	 */
-	CuentaCorriente(String dni, String nombre, int saldoInicial, nacionalidad nacion) {
+	CuentaCorriente(String dni, String nombre, int saldoInicial, String nacion) {
 		this.dni = dni;
 		this.nombre = nombre;
 		this.saldo = saldoInicial;
-		this.nacion = nacion;
+		nacionComp(nacion.toUpperCase());
 	}
 
 	/**
@@ -121,6 +125,22 @@ public class CuentaCorriente {
 		this.saldo = saldo;
 	}
 
+	
+	
+	/**
+	 * Metodo para la comprobar la correcta asignacion de nacionalidades
+	 * 
+	 * @param genero Genero del Disco
+	 */
+	private void nacionComp(String nacionalidad) {
+		switch (nacionalidad) {
+		case "ESPAÑOLA","EXTRANGERA" -> this.nacion = Nacionalidad.valueOf(nacionalidad);
+		}
+	}
+	
+	
+	
+	
 	/**
 	 * Saca el dinero(Parámetro de entrada) del saldo inicial (Invocante). No podrá
 	 * sacar dinero si no hay suficiente saldo y devolverá false, de lo contrario,
@@ -163,19 +183,22 @@ public class CuentaCorriente {
 		return "DNI: " + dni + "\nNombre: " + nombre + "\nSaldo: " + saldo + "\nNacionalidad: " + nacion;
 	}
 	
+	/**
+	 * Overrride del metodo hashcode de Objects
+	 */
 	@Override
 	public int hashCode() {
-		return Objects.hash(dni, nombre);
+		return Objects.hash(dni);
 	}
 	
 	/**
-	 * Override metodo equals de Object
+	 * Override metodo equals de Objects
 	 */
 	public boolean equals(Object cuenta) {
 		boolean iguales = false;
 		CuentaCorriente cuenta2 = (CuentaCorriente) cuenta;
 		
-		if (cuenta2.dni.equals(dni) && cuenta2.nombre.equals(nombre)) {
+		if (cuenta2.dni.equals(dni)) {
 			iguales = true;
 		}
 		return iguales;

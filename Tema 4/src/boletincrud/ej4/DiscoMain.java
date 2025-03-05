@@ -1,6 +1,5 @@
 package boletincrud.ej4;
 
-<<<<<<< HEAD
 import java.util.Scanner;
 
 public class DiscoMain {
@@ -89,8 +88,3 @@ System.out.println("e.Salir");
 	
 }
 
-=======
-public class DiscoMain {
-
-}
->>>>>>> branch 'master' of https://github.com/Fg-21/Tema4.git

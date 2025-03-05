@@ -2,9 +2,7 @@ package boletincrud.ej1;
 
 public class AlumnoMain {
 	public static void main(String[] args) {
-<<<<<<< HEAD
 
-=======
 		// Objetos alumno
 		Alumno a1 = new Alumno("Fran González", 6.5);
 		Alumno a2 = new Alumno("Fran González", 6.5);
@@ -24,7 +22,6 @@ public class AlumnoMain {
 		AlumnoCRUD.delAlumno("Fran");
 		
 		AlumnoCRUD.listado();
->>>>>>> branch 'master' of https://github.com/Fg-21/Tema4.git
 		
 		
 	}
