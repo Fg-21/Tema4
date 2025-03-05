@@ -1,5 +1,6 @@
 package boletincrud.ej4;
 
+<<<<<<< HEAD
 import java.util.HashSet;
 
 public class DiscoCRUD {
@@ -63,4 +64,8 @@ public static boolean modDisc(Disco disc, String nombre) {
 	}
 	return modded;
 }
+=======
+public class DiscoCRUD {
+
+>>>>>>> branch 'master' of https://github.com/Fg-21/Tema4.git
 }
