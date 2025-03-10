@@ -26,15 +26,6 @@ public class Hora {
 		return segundo;
 	}
 
-	/**
-	 * Setter de segundo
-	 * @param segundo Segundo a modificar en el tiempo, no puede ser mayor a 60, ni menor que 0
-	 */
-	public void setSegundo(int segundo) {
-		if (this.segundo < 60 && this.segundo >= 0) {
-		this.segundo = segundo;
-		}
-	}
 
 	/**
 	 * Getter de la hora
@@ -42,16 +33,6 @@ public class Hora {
 	 */
 	public int getHora() {
 		return hora;
-	}
-
-	/**
-	 * Setter de hora
-	 * @param hora Hora a modificar en el tiempo, no puede ser mayor a 23, ni menor que 0
-	 */
-	public void setHora(int hora) {
-		if (this.hora < 24 && this.hora >= 0) {
-			this.hora = hora;
-			}
 	}
 
 
@@ -62,16 +43,7 @@ public class Hora {
 	public int getMinuto() {
 		return minuto;
 	}
-	
-	/**
-	 * Setter de minuto
-	 * @param minuto Minuto a modificar en el tiempo, no puede ser mayor a 60, ni menor que 0
-	 */
-	public void setMinuto(int minuto) {
-		if (this.minuto < 60 && this.minuto >= 0) {
-		this.minuto = minuto;
-		}
-	}
+
 	
 	public void increase1Second() {
 		
