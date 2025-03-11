@@ -50,12 +50,20 @@ public class Fraccion {
 		return denominador;
 	}
 	
-	
+	/**
+	 * Metodo que simplifica una fraccion actual
+	 */
+	public void simplify() {
+		
+		int mcd = findMcd(this.numerador, this.denominador);
+		
+		this.numerador = this.numerador / mcd;
+		this.denominador = this.denominador / mcd;
+	}
 	
 	/**
 	 * Metodo que suma 2 fracciones, la invocante y la pasada por parametro, y al final simplifica el resultado
-	 * @param numerador Numerador de la fraccion
-	 * @param denominador Denominador de la fraccion
+	 * @param frac Fraccion a sumar a la invocante
 	 * @return Devuelve una fraccion de la suma de las dos fracciones simplificada
 	 */
 	public Fraccion suma(Fraccion frac){
@@ -65,30 +73,47 @@ public class Fraccion {
 		resul.denominador = findMcm(this.denominador, frac.denominador);
 		resul.numerador = (resul.denominador / this.denominador * this.numerador) + (resul.denominador / frac.denominador * frac.numerador); 
 		} else {
-			resul.numerador = this.numerador + numerador;
+			resul.numerador = this.numerador + frac.numerador;
 			resul.denominador = frac.denominador;
 		}
 		
-		simplify(resul);
+		resul.simplify();
 		
 		return resul;
 	}
 	
+
 	/**
-	 * Metodo que simplifica una fraccion pasada por parámetro
-	 * @param frac Fraccion a simplificar
-	 * @return Devuelve la fraccion simplificada
+	 * Metodo que multiplica la fraccion actual por la pasada como parametro
+	 * @param frac Fraccion a multiplicar por la actual
+	 * @return Devuelve el producto de ambas fracciones simplificado
 	 */
-	public Fraccion simplify(Fraccion frac) {
+	public Fraccion multiplica (Fraccion frac) {
 		Fraccion f1 = new Fraccion();
+		f1.numerador = this.numerador * frac.numerador;
+		f1.denominador = this.denominador * frac.denominador;
 		
-		int mcd = findMcd(frac.numerador, frac.denominador);
-		
-		f1.numerador = frac.numerador / mcd;
-		f1.denominador = frac.denominador / mcd;
+		f1.simplify();
 		
 		return f1;
 	}
+	
+	/**
+	 * Metodo que divide la fraccion actual por la pasada como parametro
+	 * @param frac Fraccion a dividir por la actual
+	 * @return Devuelve el cociente de ambas fracciones simplificado
+	 */
+	public Fraccion divide (Fraccion frac) {
+		Fraccion f1 = new Fraccion();
+		f1.numerador = this.numerador * frac.denominador;
+		f1.denominador = this.denominador * frac.numerador;
+		
+		f1.simplify();
+		
+		return f1;
+	}
+	
+	
 	
 	
 	
@@ -103,7 +128,7 @@ public class Fraccion {
 		int mayor = Math.max(num1, num2);
 		mcm = mayor;
 		
-		while(mcm % num1 != 0 && mcm % num2 != 0) {
+		while(mcm % num1 != 0 || mcm % num2 != 0) {
 			mcm++;
 			}
 
@@ -121,11 +146,20 @@ public class Fraccion {
 		int menor = Math.min(num1, num2);
 		mcd = menor;
 		
-		while (num1 % mcd != 0 && num2 % mcd != 0) {
+		while (num1 % mcd != 0 || num2 % mcd != 0) {
 			mcd--;
 		}
 		
 		return mcd;
+	}
+	
+	
+	/**
+	 * toString para imprimir el numerador y denominador de las fracciones
+	 */
+	@Override
+	public String toString() {
+		return this.numerador + "/" + this.denominador;
 	}
 	
 	
